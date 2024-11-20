@@ -78,7 +78,7 @@ class Pixelated extends HTMLElement {
         const style = this.shadowRoot.querySelector("style");
         style.textContent = style.textContent.replace(
           "background-image: none;",
-          "background-image: url(./assets/circle.png);"
+          "background-image: url(./assets/circle.jpg);"
         );
       }
     }
