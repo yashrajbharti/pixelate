@@ -18,6 +18,7 @@ The **`<image-pixelated>`** web component allows you to pixelate images effortle
 
 ## Installation
 
+![NPM LINK](https://www.npmjs.com/package/image-pixelate)
 Simply use npm or unpkg to install:
 
 ```bash
