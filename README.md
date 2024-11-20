@@ -25,7 +25,7 @@ npm install image-pixelate
 ```
 
 ```html
-<script src="https://unpkg.com/pixelate@1.0.0/image-pixelate.js"></script>
+<script src="https://unpkg.com/image-pixelate@1.0.1/pixelate.js"></script>
 ```
 
 then import using:
