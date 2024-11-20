@@ -11,6 +11,12 @@ body {
     block-size: 100dvh;
 }
 
+header {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+}
+
 .github-corner {
     fill: #fff;
     color: #0D080B;
