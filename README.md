@@ -21,17 +21,17 @@ The **`<image-pixelated>`** web component allows you to pixelate images effortle
 Simply use npm or unpkg to install:
 
 ```bash
-npm install pixelate
+npm install image-pixelate
 ```
 
 ```html
-<script src="https://unpkg.com/pixelate@1.0.0/pixelate.js"></script>
+<script src="https://unpkg.com/pixelate@1.0.0/image-pixelate.js"></script>
 ```
 
 then import using:
 
 ```js
-import "pixelate";
+import "image-pixelate";
 ```
 
 ---
@@ -41,9 +41,21 @@ import "pixelate";
 Simply use as web components:
 
 ```html
- <image-pixelated src="./assets/Mona_Lisa.jpg" pixel-size="15" lego-size="15" max-width="500"
-            max-height="600" lego-effect>
-        </image-pixelated>
+<image-pixelated
+    image-src="./Mona_Lisa.jpg"
+    pixel-size="15"
+    lego-size="15"
+    max-width="500"
+    max-height="600"
+    lego-effect
+></image-pixelated>
+
+<image-pixelated
+    image-src="./Mona_Lisa.jpg"
+    pixel-size="15"
+    max-width="500"
+    max-height="500"
+></image-pixelated>
 ```
 
 ---
