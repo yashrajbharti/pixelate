@@ -47,7 +47,7 @@ class Pixelated extends HTMLElement {
 
   static get observedAttributes() {
     return [
-      "image-src",
+      "src",
       "pixel-size",
       "lego-size",
       "max-width",
@@ -58,7 +58,7 @@ class Pixelated extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      if (name === "image-src") {
+      if (name === "src") {
         const pixelSize = parseInt(this.getAttribute("pixel-size")) || 10;
         this.loadImage(newValue, pixelSize);
       } else if (name === "pixel-size") {
@@ -85,7 +85,7 @@ class Pixelated extends HTMLElement {
   }
 
   connectedCallback() {
-    const imageUrl = this.getAttribute("image-src");
+    const imageUrl = this.getAttribute("src");
     const pixelSize = parseInt(this.getAttribute("pixel-size")) || 10;
 
     if (imageUrl) {
