@@ -1,6 +1,10 @@
 # Image-Pixelated Web Component
 
+![Pixelated](./assets/pixelated.png)
+
 The **`<image-pixelated>`** web component allows you to pixelate images effortlessly and provides an optional Lego effect for a fun, grid-style overlay. The component is fully responsive and highly customizable with attributes for pixel size, grid size, maximum dimensions, and more.
+
+![Mona Lisa Pixelated](./assets/screenshot.png)
 
 ---
 
