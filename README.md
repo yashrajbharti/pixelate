@@ -44,7 +44,7 @@ Simply use as web components:
 
 ```html
 <image-pixelated
-    image-src="./Mona_Lisa.jpg"
+    src="./Mona_Lisa.jpg"
     pixel-size="15"
     lego-size="15"
     max-width="500"
@@ -53,7 +53,7 @@ Simply use as web components:
 ></image-pixelated>
 
 <image-pixelated
-    image-src="./Mona_Lisa.jpg"
+    src="./Mona_Lisa.jpg"
     pixel-size="15"
     max-width="500"
     max-height="500"
