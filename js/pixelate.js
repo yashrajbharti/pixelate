@@ -43,6 +43,8 @@ class Pixelated extends HTMLElement {
       "aria-label",
       "Pixelated image of the provided source."
     );
+
+    this.originalImageData = null; // To store the original image data
   }
 
   static get observedAttributes() {
@@ -62,11 +64,7 @@ class Pixelated extends HTMLElement {
         const pixelSize = parseInt(this.getAttribute("pixel-size")) || 10;
         this.loadImage(newValue, pixelSize);
       } else if (name === "pixel-size") {
-        this.pixelateImage(
-          this.canvas.getContext("2d"),
-          this.canvas,
-          parseInt(newValue) || 10
-        );
+        this.updatePixelation(parseInt(newValue) || 10);
       } else if (name === "lego-size") {
         const style = this.shadowRoot.querySelector("style");
         const gridSize = parseInt(newValue) || 10;
@@ -76,10 +74,17 @@ class Pixelated extends HTMLElement {
         );
       } else if (name === "lego-effect") {
         const style = this.shadowRoot.querySelector("style");
-        style.textContent = style.textContent.replace(
-          "background-image: none;",
-          "background-image: url(./assets/circle.jpg);"
-        );
+        if (newValue === "true")
+          style.textContent = style.textContent.replace(
+            "background-image: none;",
+            "background-image: url(./assets/circle.jpg);"
+          );
+        else {
+          style.textContent = style.textContent.replace(
+            "background-image: url(./assets/circle.jpg);",
+            "background-image: none;"
+          );
+        }
       }
     }
   }
@@ -122,6 +127,12 @@ class Pixelated extends HTMLElement {
       this.wrapper.style.height = newHeight + "px";
 
       ctx.drawImage(img, 0, 0, newWidth, newHeight);
+      this.originalImageData = ctx.getImageData(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      ); // Store original image data
       this.pixelateImage(ctx, canvas, pixelSize);
     };
 
@@ -135,6 +146,17 @@ class Pixelated extends HTMLElement {
     };
 
     img.src = imageUrl;
+  }
+
+  updatePixelation(pixelSize) {
+    if (!this.originalImageData) return;
+
+    const canvas = this.canvas;
+    const ctx = canvas.getContext("2d");
+
+    ctx.putImageData(this.originalImageData, 0, 0);
+
+    this.pixelateImage(ctx, canvas, pixelSize);
   }
 
   pixelateImage(ctx, canvas, pixelSize) {

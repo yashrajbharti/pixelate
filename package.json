@@ -1,8 +1,8 @@
 {
   "name": "image-pixelate",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "The **`<image-pixelated>`** web component allows you to pixelate images effortlessly and provides an optional Lego effect for a fun, grid-style overlay. The component is fully responsive and highly customizable with attributes for pixel size, grid size, maximum dimensions, and more.",
-  "main": "pixelate.js",
+  "main": "/js/pixelate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
