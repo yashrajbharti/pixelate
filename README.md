@@ -89,7 +89,7 @@ Simply use as web components:
    - When `lego-effect` is enabled, a grid-like overlay is added using a background image (`circle.png`) sized according to the `lego-size` attribute.
 
 > [!NOTE]
-> Using the `lego-effect` set to `true` is important and the `lego-size` attribute will have no effect on the component without it.
+> The `lego-size` attribute only takes effect when the `lego-effect` attribute is set to `true`. Be sure to enable `lego-effect` to utilize this feature
 
 ---
 
