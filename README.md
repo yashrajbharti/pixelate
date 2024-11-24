@@ -49,7 +49,7 @@ Simply use as web components:
     lego-size="15"
     max-width="500"
     max-height="600"
-    lego-effect
+    lego-effect="true"
 ></image-pixelated>
 
 <image-pixelated
@@ -87,6 +87,9 @@ Simply use as web components:
 
 3. **Lego Effect**:
    - When `lego-effect` is enabled, a grid-like overlay is added using a background image (`circle.png`) sized according to the `lego-size` attribute.
+
+> [!NOTE]
+> Using the `lego-effect` set to `true` is important and the `lego-size` attribute will have no effect on the component without it.
 
 ---
 
